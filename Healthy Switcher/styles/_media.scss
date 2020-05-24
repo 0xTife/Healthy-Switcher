@@ -1,0 +1,622 @@
+@media screen and (max-width: 1200px) {
+    html,
+    body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        width: 100vw;
+        height: 100%;
+        .container {
+            header {
+                nav {
+                    height: 100px;
+                    ul {
+                        li {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            .about {
+                width: 90%;
+                height: 850px;
+            }
+            .work {
+                width: 90%;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, .5fr);
+                grid-row-gap: 1em;
+                div {
+                    &:first-child {
+                        grid-column: 1/3;
+                    }
+                }
+                .box {
+                    &:hover {
+                        background: $primaryColor;
+                        color: #f4f4f4;
+                        cursor: pointer;
+                        transition: all .5s ease-in-out;
+                        .line {
+                            background: $darkGrey;
+                            animation-name: line;
+                            animation-duration: 1s;
+                            animation-fill-mode: forwards;
+                        }
+                        .box-info {
+                            color: #f4f4f4;
+                        }
+                    }
+                }
+            }
+            .dish {
+                width: 90%;
+                margin: 100px auto;
+                ul {
+                    li {
+                        flex: 25%;
+                    }
+                }
+            }
+            .chef {
+                width: 90%;
+                height: 100%;
+                .chef-info {
+                    width: 100%;
+                    .chef1 {
+                        flex: 1;
+                    }
+                    .chef2 {
+                        flex: 1;
+                    }
+                    .chef3 {
+                        flex: 3;
+                    }
+                }
+            }
+            .recipies {
+                width: 90%;
+                height: 100%;
+                .recipies-comments {
+                    .comments {
+                        padding: 15px 10px;
+                    }
+                }
+            }
+            .social {
+                width: 90%;
+                height: 620px;
+                grid-template-rows: .5fr 1fr;
+            }
+            footer {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    html,
+    body {
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        width: 140vw;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    html,
+    body {
+        width: 250vw;
+        height: auto;
+        .container {
+            header {
+                height: 800px;
+                .nav1 {
+                    display: none;
+                }
+                .nav2 {
+                    display: block;
+                    .mobile {
+                        display: flex;
+                        padding: 0 50px;
+                        border-bottom: 1px solid $grey;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 100px;
+                        font-family: sans-serif;
+                        ul {
+                            list-style-type: none;
+                        }
+                        i {
+                            font-size: 50px;
+                            color: $primaryColor;
+                        }
+                        .menu {
+                            display: none;
+                        }
+                    }
+                }
+                .info {
+                    h1 {
+                        font-size: 80px;
+                    }
+                    .info-p {
+                        font-size: 25px;
+                    }
+                    button {
+                        width: 250px;
+                        height: 70px;
+                        font-size: 30px;
+                    }
+                    ul {
+                        li {
+                            i {
+                                font-size: 40px;
+                            }
+                            h4 {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .about {
+                height: 900px;
+                .about-content {
+                    h5 {
+                        font-size: 40px;
+                    }
+                    p {
+                        font-size: 25px;
+                    }
+                    .about-images {
+                        flex-wrap: nowrap;
+                        i {
+                            font-size: 40px;
+                            flex: 10%;
+                        }
+                        .img1 {
+                            flex: 40%;
+                        }
+                        .img {
+                            flex: 40%;
+                        }
+                    }
+                }
+            }
+            .work {
+                height: 1000px;
+                .work-head {
+                    .work-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                .box {
+                    h3 {
+                        font-size: 2.5em;
+                    }
+                    .line {
+                        width: 200px;
+                        height: 10px;
+                    }
+                    .box-info {
+                        font-size: 2em;
+                        line-height: 1em;
+                    }
+                }
+            }
+            .dish {
+                .dish-head {
+                    .dish-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                ul {
+                    height: 1900px;
+                    li {
+                        flex: 45%;
+                        .dish-info {
+                            h3 {
+                                font-size: 40px;
+                            }
+                            .bonus {
+                                font-size: 25px;
+                            }
+                            .bonus-info {
+                                font-size: 30px;
+                            }
+                            .dish-footer {
+                                .rating {
+                                    i {
+                                        font-size: 30px;
+                                    }
+                                    span {
+                                        font-size: 30px;
+                                    }
+                                }
+                                button {
+                                    width: 150px;
+                                    height: 80px;
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .chef {
+                .chef-head {
+                    .chef-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                .chef1,
+                .chef2,
+                .chef3 {
+                    .chef-id {
+                        .name {
+                            h4 {
+                                font-size: 50px;
+                            }
+                            p {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .recipies {
+                .recipies-head {
+                    .recipies-watermark {
+                        @include watermark(120px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(50px, #f4f4f4, sans-serif, .1em, 100, relative, -100px);
+                    }
+                }
+            }
+            .social {
+                height: 1000px;
+                grid-template-rows: .5fr 1fr 1fr;
+                .social-head {
+                    .social-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                .social-heading {
+                    height: 40%;
+                }
+                .social-content {
+                    height: 60%;
+                }
+                .social-box {
+                    &:first-child {
+                        grid-column: 1/3;
+                        grid-row: 2/3;
+                    }
+                    &:nth-child(2) {
+                        grid-column: 3/4;
+                        grid-row: 2/3;
+                    }
+                    &:last-child {
+                        grid-column: 1/3;
+                        grid-row: 2/4;
+                    }
+                }
+                .fb {
+                    .social-heading {
+                        justify-content: space-between;
+                        padding: 2em;
+                        div {
+                            i {
+                                padding: 40px;
+                                font-size: 40px;
+                                border-radius: 50%;
+                            }
+                            span {
+                                font-size: 40px;
+                                font-family: sans-serif;
+                            }
+                        }
+                        button {
+                            width: 200px;
+                            height: 80px;
+                            font-size: 25px;
+                            font-weight: bolder;
+                            border-radius: 40px;
+                        }
+                    }
+                    .social-content {
+                        padding: 2em;
+                        .social-date {
+                            font-size: 30px;
+                        }
+                        .social-post {
+                            font-size: 35px;
+                            line-height: 1em;
+                        }
+                        .social-link {
+                            padding: 40px 0;
+                            font-size: 35px;
+                            font-weight: bolder;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    html,
+    body {
+        width: 300vw;
+        height: auto;
+        .container {
+            header {
+                height: 800px;
+                .nav1 {
+                    display: none;
+                }
+                .nav2 {
+                    display: block;
+                    .mobile {
+                        display: flex;
+                        padding: 0 50px;
+                        border-bottom: 1px solid $grey;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 100px;
+                        font-family: sans-serif;
+                        ul {
+                            list-style-type: none;
+                        }
+                        i {
+                            font-size: 50px;
+                            color: $primaryColor;
+                        }
+                        .menu {
+                            display: none;
+                        }
+                    }
+                }
+                .info {
+                    h1 {
+                        font-size: 80px;
+                    }
+                    .info-p {
+                        font-size: 25px;
+                    }
+                    button {
+                        width: 250px;
+                        height: 70px;
+                        font-size: 30px;
+                    }
+                    ul {
+                        li {
+                            i {
+                                font-size: 40px;
+                            }
+                            h4 {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .about {
+                height: 900px;
+                .about-content {
+                    h5 {
+                        font-size: 40px;
+                    }
+                    p {
+                        font-size: 25px;
+                    }
+                    .about-images {
+                        flex-wrap: nowrap;
+                        i {
+                            font-size: 40px;
+                            flex: 10%;
+                        }
+                        .img1 {
+                            flex: 40%;
+                        }
+                        .img {
+                            flex: 40%;
+                        }
+                    }
+                }
+            }
+            .work {
+                height: 1000px;
+                .work-head {
+                    .work-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                .box {
+                    h3 {
+                        font-size: 2.5em;
+                    }
+                    .line {
+                        width: 200px;
+                        height: 10px;
+                    }
+                    .box-info {
+                        font-size: 2em;
+                        line-height: 1em;
+                    }
+                }
+            }
+            .dish {
+                .dish-head {
+                    .dish-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                ul {
+                    height: 1900px;
+                    li {
+                        flex: 45%;
+                        .dish-info {
+                            h3 {
+                                font-size: 40px;
+                            }
+                            .bonus {
+                                font-size: 25px;
+                            }
+                            .bonus-info {
+                                font-size: 30px;
+                            }
+                            .dish-footer {
+                                .rating {
+                                    i {
+                                        font-size: 30px;
+                                    }
+                                    span {
+                                        font-size: 30px;
+                                    }
+                                }
+                                button {
+                                    width: 150px;
+                                    height: 80px;
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .chef {
+                .chef-head {
+                    .chef-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                .chef1,
+                .chef2,
+                .chef3 {
+                    .chef-id {
+                        .name {
+                            h4 {
+                                font-size: 50px;
+                            }
+                            p {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .recipies {
+                .recipies-head {
+                    .recipies-watermark {
+                        @include watermark(120px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(50px, #f4f4f4, sans-serif, .1em, 100, relative, -100px);
+                    }
+                }
+            }
+            .social {
+                height: 1000px;
+                grid-template-rows: .5fr 1fr 1fr;
+                .social-head {
+                    .social-watermark {
+                        @include watermark(150px, #3a3a3ac0, sans-serif, center, bolder, .3em);
+                    }
+                    h5 {
+                        @include textonwatermark(60px, #f4f4f4, sans-serif, .1em, 100, relative, -120px);
+                    }
+                }
+                .social-heading {
+                    height: 40%;
+                }
+                .social-content {
+                    height: 60%;
+                }
+                .social-box {
+                    &:first-child {
+                        grid-column: 1/3;
+                        grid-row: 2/3;
+                    }
+                    &:nth-child(2) {
+                        grid-column: 3/4;
+                        grid-row: 2/3;
+                    }
+                    &:last-child {
+                        grid-column: 1/3;
+                        grid-row: 2/4;
+                    }
+                }
+                .fb {
+                    .social-heading {
+                        justify-content: space-between;
+                        padding: 2em;
+                        div {
+                            i {
+                                padding: 40px;
+                                font-size: 40px;
+                                border-radius: 50%;
+                            }
+                            span {
+                                font-size: 40px;
+                                font-family: sans-serif;
+                            }
+                        }
+                        button {
+                            width: 200px;
+                            height: 80px;
+                            font-size: 25px;
+                            font-weight: bolder;
+                            border-radius: 40px;
+                        }
+                    }
+                    .social-content {
+                        padding: 2em;
+                        .social-date {
+                            font-size: 30px;
+                        }
+                        .social-post {
+                            font-size: 35px;
+                            line-height: 1em;
+                        }
+                        .social-link {
+                            padding: 40px 0;
+                            font-size: 35px;
+                            font-weight: bolder;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

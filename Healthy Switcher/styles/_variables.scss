@@ -1,0 +1,40 @@
+$secondaryColor: #1f1e1e;
+$primaryColor: #34c759;
+$darkGrey: #292828;
+$grey: #919191;
+$rating-stars: orange;
+@mixin watermark($font-size, $color, $font-family, $text-align, $font-weight, $letter-spacing) {
+    font-size: $font-size;
+    color: $color;
+    font-family: $font-family;
+    text-align: $text-align;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin textonwatermark($font-size, $color, $font-family, $letter-spacing, $font-weight, $position, $top) {
+    font-size: $font-size;
+    color: $color;
+    font-family: $font-family;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+    position: $position;
+    top: $top;
+}
+
+@keyframes line {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+@function lighten($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
